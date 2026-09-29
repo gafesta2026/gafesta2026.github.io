@@ -271,7 +271,7 @@ const CONFIG = {
     { day: "1일차 · 11월 6일(금)", items: [
       ["14:30","","체크인","전용 데스크 체크인, 웰컴 키트 제공"],
       ["15:00","18:30","자유 시간","개별 휴식, 리셉션 및 네트워킹"],
-      ["18:30","","마운틴홀 집결","리셉션 및 포토 타임", true],
+      ["18:30","","마운틴홀 모임","리셉션 및 포토 타임", true],
       ["19:00","21:50","만찬 및 시상식","오프닝, 만찬, 시상식, 럭키 드로우, Best Dresser 선발<br>사회 김기환"]
     ]},
     { day: "2일차 · 11월 7일(토)", items: [
@@ -293,7 +293,7 @@ $('letter').innerHTML = CONFIG.letter.map(p=>`<p>${p}</p>`).join('') + `<p class
 $('info').innerHTML = [
   ['일정', CONFIG.dateText],
   ['체크인', CONFIG.timeText],
-  ['집결', `<span class="hl">${CONFIG.gatherText}</span>`],
+  ['모임', `<span class="hl">${CONFIG.gatherText}</span>`],
   ['장소', CONFIG.venue],
   ['대상', CONFIG.target],
   ['드레스', CONFIG.dress]
