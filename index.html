@@ -93,6 +93,10 @@ img{max-width:100%;display:block}
 @keyframes unfold{from{transform:scale(.6) translateY(30px);opacity:0}to{transform:none;opacity:1}}
 .letter p{margin:0 0 14px;font-size:15.5px;line-height:1.85}
 .letter .sign{margin:22px 0 0;text-align:right;font-weight:800}
+.letter{position:relative}
+.letter .dc{position:absolute;top:-22px;right:-6px;margin:0;padding:9px 16px 10px;border-radius:999px;background:linear-gradient(135deg,var(--violet),#9463EE);color:#fff;font-family:"Outfit",sans-serif;font-weight:800;font-size:15px;line-height:1.05;letter-spacing:.05em;text-align:center;box-shadow:0 12px 22px rgba(100,60,170,.3);transform:rotate(6deg);animation:tag 4.5s ease-in-out infinite}
+.letter .dc small{display:block;font-size:9.5px;font-weight:700;letter-spacing:.24em;opacity:.85;margin-bottom:3px}
+@keyframes tag{0%,100%{transform:translateY(0) rotate(6deg)}50%{transform:translateY(-6px) rotate(2deg)}}
 
 /* info */
 .info{margin:0;display:grid;grid-template-columns:78px 1fr;row-gap:0;background:var(--card);border:1px solid var(--card-line);border-radius:22px;overflow:hidden}
@@ -260,6 +264,7 @@ const CONFIG = {
   target: "연간 성과우수 매니저님",
   dress: "원더우먼 콘셉트<br><small style=\"font-weight:400;color:var(--ink-soft)\">시상식에서 Best Dresser를 선발합니다</small>",   // 가안
   host: "삼성화재",
+  secretDress: "SEXY CLUBBER",   // 초대 편지 카드에 띄우는 영문 드레스코드
   shareUrl: "",   // 비워두면 현재 접속 주소를 공유
   lead: "올 한 해 탁월한 성과로 현장을 빛내 주신<br>매니저님을 2026년의 주인공으로 모십니다.",
   letter: [
@@ -289,7 +294,7 @@ const badge = k => CONFIG.tbd.includes(k) ? '<span class="tbd">확인 필요</sp
 
 /* fill content */
 $('lead').innerHTML = CONFIG.lead;
-$('letter').innerHTML = CONFIG.letter.map(p=>`<p>${p}</p>`).join('') + `<p class="sign">${CONFIG.host} 드림</p>`;
+$('letter').innerHTML = (CONFIG.secretDress?`<p class="dc"><small>DRESS CODE</small>${CONFIG.secretDress}</p>`:'') + CONFIG.letter.map(p=>`<p>${p}</p>`).join('') + `<p class="sign">${CONFIG.host} 드림</p>`;
 $('info').innerHTML = [
   ['일정', CONFIG.dateText],
   ['체크인', CONFIG.timeText],
