@@ -97,13 +97,13 @@ img{max-width:100%;display:block}
 .letter{position:relative;z-index:1}
 .dc-bg{position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity 1.6s ease .9s}
 .dc-bg.show{opacity:1}
-.dc-bg span{position:absolute;font-family:"Outfit",sans-serif;font-weight:800;letter-spacing:.08em;white-space:nowrap;color:transparent;-webkit-text-stroke:1px var(--violet);opacity:.5}
-.dc-bg .w1{top:-18px;right:10px;font-size:15px;animation:float1 9s ease-in-out infinite}
-.dc-bg .w2{bottom:-22px;left:8px;font-size:26px;animation:float2 11s ease-in-out infinite}
+.dc-bg span{position:absolute;font-family:"Outfit",sans-serif;font-weight:800;letter-spacing:.08em;white-space:nowrap;color:var(--violet);opacity:.6}
+.dc-bg .w1{top:-20px;right:10px;font-size:17px;animation:float1 9s ease-in-out infinite}
+.dc-bg .w2{bottom:-26px;left:8px;font-size:30px;animation:float2 11s ease-in-out infinite}
 @keyframes float1{0%,100%{transform:translate(0,0) rotate(4deg)}50%{transform:translate(-14px,-8px) rotate(-2deg)}}
 @keyframes float2{0%,100%{transform:translate(0,0) rotate(-4deg)}50%{transform:translate(16px,-10px) rotate(2deg)}}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .dc-bg span{-webkit-text-stroke-color:#D8C2FF}}
-:root[data-theme="dark"] .dc-bg span{-webkit-text-stroke-color:#D8C2FF}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .dc-bg span{color:#D8C2FF}}
+:root[data-theme="dark"] .dc-bg span{color:#D8C2FF}
 
 /* info */
 .info{margin:0;display:grid;grid-template-columns:78px 1fr;row-gap:0;background:var(--card);border:1px solid var(--card-line);border-radius:22px;overflow:hidden}
@@ -272,7 +272,7 @@ const CONFIG = {
   mapQuery: "인스파이어 엔터테인먼트 리조트",
   address: "인천광역시 중구 공항문화로 127",
   target: "연간 성과우수 매니저님",
-  dress: "원더우먼 콘셉트<br><small style=\"font-weight:400;color:var(--ink-soft)\">시상식에서 Best Dresser를 선발합니다</small>",   // 가안
+  dress: "원더우먼 콘셉트",   // 가안
   host: "삼성화재",
   secretDress: "SEXY CLUBBER",   // 선물상자를 열면 편지 뒤 배경에 떠다니는 영문 드레스코드 (비우면 숨김)
   shareUrl: "",   // 비워두면 현재 접속 주소를 공유
