@@ -95,11 +95,11 @@ img{max-width:100%;display:block}
 .letter .sign{margin:22px 0 0;text-align:right;font-weight:800}
 .dc-bg{display:none;margin:26px 0 0;text-align:center;pointer-events:none}
 .dc-bg.show{display:block;animation:dcIn 1.4s ease .9s both}
-.dc-bg span{display:block;font-family:"Outfit",sans-serif;font-weight:800;white-space:nowrap;color:var(--violet);opacity:.6;animation:dcFloat 6s ease-in-out infinite}
+.dc-bg span{display:block;font-family:"Outfit",sans-serif;font-weight:800;white-space:nowrap;color:var(--violet);opacity:.45;animation:dcFloat 5.5s ease-in-out infinite}
 .dc-bg .w1{font-size:12px;letter-spacing:.28em}
-.dc-bg .w2{font-size:26px;letter-spacing:.08em;margin-top:2px}
+.dc-bg .w2{font-size:26px;letter-spacing:.08em;margin-top:2px;animation-delay:-.6s}
 @keyframes dcIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
-@keyframes dcFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes dcFloat{0%,100%{transform:translate(0,0) rotate(-1.5deg)}25%{transform:translate(6px,-9px) rotate(0deg)}50%{transform:translate(0,-16px) rotate(1.5deg)}75%{transform:translate(-6px,-7px) rotate(0deg)}}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .dc-bg span{color:#D8C2FF}}
 :root[data-theme="dark"] .dc-bg span{color:#D8C2FF}
 
