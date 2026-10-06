@@ -268,7 +268,6 @@ const CONFIG = {
   mapQuery: "인스파이어 엔터테인먼트 리조트",
   address: "인천광역시 중구 공항문화로 127",
   target: "연간 성과우수 매니저님",
-  dress: "원더우먼 콘셉트",   // 가안
   host: "삼성화재",
   secretDress: "SEXY CLUBBER",   // 선물상자를 열면 편지 아래에 떠오르는 영문 드레스코드 (비우면 숨김)
   shareUrl: "",   // 비워두면 현재 접속 주소를 공유
@@ -307,8 +306,7 @@ $('info').innerHTML = [
   ['체크인', CONFIG.timeText],
   ['모임', `<span class="hl">${CONFIG.gatherText}</span>`],
   ['장소', CONFIG.venue],
-  ['대상', CONFIG.target],
-  ['드레스', CONFIG.dress]
+  ['대상', CONFIG.target]
 ].map(([k,v])=>`<dt>${k}</dt><dd>${v}</dd>`).join('');
 $('prog').innerHTML = CONFIG.program.map(g=>`<li class="day"><h3>${g.day}</h3></li>`+g.items.map(([t,e,a,b,k])=>`<li${k?' class="key"':''}><time>${t}${e?`<small>~${e}</small>`:''}</time><div><strong>${a}</strong>${b?`<span>${b}</span>`:''}</div></li>`).join('')).join('');
 $('place').innerHTML = CONFIG.venue;
