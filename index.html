@@ -244,7 +244,7 @@ img{max-width:100%;display:block}
           <button class="btn" id="copyAddr">주소 복사</button>
         </div>
       </div>
-      <button class="btn primary share" id="shareBtn">초대장 링크 공유하기</button>
+      <a class="btn primary share" id="surveyBtn" target="_blank" rel="noopener">사전 설문 참여하기</a>
       <p class="foot" id="foot"></p>
     </section>
   </main>
@@ -270,7 +270,7 @@ const CONFIG = {
   target: "연간 성과우수 매니저님",
   host: "삼성화재",
   secretDress: "SEXY CLUBBER",   // 선물상자를 열면 편지 아래에 떠오르는 영문 드레스코드 (비우면 숨김)
-  shareUrl: "",   // 비워두면 현재 접속 주소를 공유
+  surveyUrl: "https://naver.me/5HyHpgGs",   // 하단 '사전 설문 참여하기' 버튼 연결 주소
   lead: "올 한 해 탁월한 성과로 현장을 빛내 주신<br>매니저님을 2026년의 주인공으로 모십니다.",
   letter: [
     "한 해 동안 고객 곁에서, 그리고 설계사님 곁에서 가장 먼저 움직여 주신 매니저님께 감사의 마음을 전합니다.",
@@ -334,14 +334,7 @@ async function copy(txt,msg){
   showLink(txt);
 }
 $('copyAddr').onclick = () => copy(CONFIG.address,'주소를 복사했습니다');
-$('shareBtn').onclick = async () => {
-  const url=CONFIG.shareUrl||location.href;
-  const data={title:'GA 2026 Manager Festa 초대장',text:'GA 2026 Manager Festa에 초대합니다. 11월 6일(금) 14:30 체크인, 인스파이어 리조트',url};
-  if(navigator.share&&(!navigator.canShare||navigator.canShare(data))){
-    try{await navigator.share(data);return}catch(e){if(e&&e.name==='AbortError')return}
-  }
-  copy(url,'초대장 링크를 복사했습니다');
-};
+$('surveyBtn').href = CONFIG.surveyUrl;
 $('linkClose').onclick=()=>{$('linkBox').hidden=true};
 
 /* countdown */
