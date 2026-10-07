@@ -149,7 +149,7 @@ img{max-width:100%;display:block}
 .btn{appearance:none;border:0;cursor:pointer;text-decoration:none;text-align:center;font:inherit;font-size:14px;font-weight:700;border-radius:14px;padding:13px 6px;background:var(--pill);color:var(--ink)}
 .btn:focus-visible{outline:3px solid var(--violet);outline-offset:2px}
 .btn.primary{background:var(--violet);color:#fff}
-.share{display:block;width:100%;margin-top:40px;padding:17px;font-size:16px}
+.share{display:block;width:100%;margin-top:0;padding:17px;font-size:16px}
 .foot{margin:36px 0 0;text-align:center;font-size:12.5px;color:var(--ink-soft);line-height:1.7}
 .linkbox{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);width:min(92vw,400px);background:var(--page);border:1px solid var(--card-line);border-radius:18px;padding:16px;box-shadow:0 16px 40px rgba(60,30,120,.3);z-index:45}
 .linkbox[hidden]{display:none}
@@ -216,16 +216,10 @@ img{max-width:100%;display:block}
       <dl class="info" id="info"></dl>
     </section>
 
-    <section class="sec" aria-labelledby="h-count">
-      <h2 id="h-count">페스타까지</h2>
-      <div class="count" aria-live="off">
-        <div><b id="cd-d">–</b><small>일</small></div>
-        <div><b id="cd-h">–</b><small>시간</small></div>
-        <div><b id="cd-m">–</b><small>분</small></div>
-        <div><b id="cd-s">–</b><small>초</small></div>
-      </div>
-      <p class="dday" id="dday"></p>
-    </section>
+
+    <div class="sec">
+      <a class="btn primary share" id="surveyBtn" target="_blank" rel="noopener">사전 설문 참여하기</a>
+    </div>
 
     <section class="sec" aria-labelledby="h-prog">
       <h2 id="h-prog">프로그램</h2>
@@ -244,7 +238,17 @@ img{max-width:100%;display:block}
           <button class="btn" id="copyAddr">주소 복사</button>
         </div>
       </div>
-      <a class="btn primary share" id="surveyBtn" target="_blank" rel="noopener">사전 설문 참여하기</a>
+    </section>
+
+    <section class="sec" aria-labelledby="h-count">
+      <h2 id="h-count">페스타까지</h2>
+      <div class="count" aria-live="off">
+        <div><b id="cd-d">–</b><small>일</small></div>
+        <div><b id="cd-h">–</b><small>시간</small></div>
+        <div><b id="cd-m">–</b><small>분</small></div>
+        <div><b id="cd-s">–</b><small>초</small></div>
+      </div>
+      <p class="dday" id="dday"></p>
       <p class="foot" id="foot"></p>
     </section>
   </main>
