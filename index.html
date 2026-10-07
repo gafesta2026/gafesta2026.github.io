@@ -113,6 +113,7 @@ img{max-width:100%;display:block}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .hl,:root:not([data-theme="light"]) .prog li.key strong{color:#D8C2FF}}
 :root[data-theme="dark"] .hl,:root[data-theme="dark"] .prog li.key strong{color:#D8C2FF}
 .info dt{padding-left:20px;color:var(--ink-soft);font-weight:600}
+.info dt .lbl{display:inline-flex;justify-content:space-between;width:3em}
 .info dd{padding-right:20px;font-weight:600;word-break:keep-all}
 .info dt:first-of-type,.info dd:first-of-type{border-top:0}
 .tbd{display:inline-block;background:var(--pill);color:var(--violet);border-radius:8px;padding:1px 8px;font-size:13px;font-weight:800;margin-left:4px;vertical-align:1px}
@@ -266,7 +267,7 @@ img{max-width:100%;display:block}
 const CONFIG = {
   eventDate: "2026-11-06T16:00:00+09:00",   // 체크인 시작 기준
   eventEnd:  "2026-11-07T11:00:00+09:00",
-  dateText: "2026년 11월 6일(금) ~ 7일(토), 1박 2일",
+  dateText: "2026년 11월 6일(금) ~ 7일(토), 1박&nbsp;2일",
   timeText: "11월 6일(금) 16:00부터",
   gatherText: "11월 6일(금) 18:30",
   venue: "인스파이어 엔터테인먼트 리조트 마운틴홀",
@@ -314,7 +315,7 @@ $('info').innerHTML = [
   ['시작', `<span class="hl">${CONFIG.gatherText}</span>`],
   ['장소', CONFIG.venue],
   ['대상', CONFIG.target]
-].map(([k,v])=>`<dt>${k}</dt><dd>${v}</dd>`).join('');
+].map(([k,v])=>`<dt><span class="lbl" aria-label="${k}">${[...k].map(c=>`<span aria-hidden="true">${c}</span>`).join('')}</span></dt><dd>${v}</dd>`).join('');
 $('prog').innerHTML = CONFIG.program.map(g=>`<li class="day"><h3>${g.day}</h3></li>`+g.items.map(([t,e,a,b,k])=>`<li${k?' class="key"':''}><time>${t}${e?`<small>~${e}</small>`:''}</time><div><strong>${a}</strong>${b?`<span>${b}</span>`:''}</div></li>`).join('')).join('');
 $('place').innerHTML = CONFIG.venue;
 $('addr').innerHTML = CONFIG.address + badge('address');
