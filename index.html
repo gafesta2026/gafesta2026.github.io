@@ -92,7 +92,7 @@ img{max-width:100%;display:block}
 #h-gift,#gift-sub{text-align:center}
 .letter.show{margin-top:22px;display:block;animation:unfold .7s cubic-bezier(.2,.9,.3,1.2)}
 @keyframes unfold{from{transform:scale(.6) translateY(30px);opacity:0}to{transform:none;opacity:1}}
-.letter p{margin:0 0 14px;font-size:15.5px;line-height:1.85}
+.letter p{margin:0 0 14px;font-size:15.5px;line-height:1.85;word-break:keep-all}
 .letter .sign{margin:22px 0 0;text-align:right;font-weight:800}
 .dc-bg{display:none;margin:26px 0 0;text-align:center;pointer-events:none}
 .dc-bg.show{display:block;animation:dcIn 2s ease 1s both}
@@ -213,7 +213,7 @@ img{max-width:100%;display:block}
 
     <section class="sec" aria-labelledby="h-info">
       <h2 id="h-info">행사 안내</h2>
-      <p class="sub">연간 성과우수 매니저님을 위한 1박 2일입니다.</p>
+      <p class="sub">상세 문의는 채널통합지원파트로 주세요.</p>
       <dl class="info" id="info"></dl>
     </section>
 
@@ -272,7 +272,7 @@ const CONFIG = {
   venue: "인스파이어 엔터테인먼트 리조트 마운틴홀",
   mapQuery: "인스파이어 엔터테인먼트 리조트",
   address: "인천광역시 중구 공항문화로 127",
-  target: "연간 성과우수 매니저님",
+  target: "매니저 연도상 수상 매니저님",
   host: "삼성화재",
   signer: "GA상생지원팀장 양권진 상무",   // 초대 편지 서명
   secretDress: "CASUAL CUTE PRETTY SEXY CLUBBER",   // 선물상자를 열면 편지 아래에 떠오르는 영문 드레스코드 (비우면 숨김)
