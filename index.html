@@ -89,7 +89,8 @@ img{max-width:100%;display:block}
 @keyframes pop{to{transform:scale(1.5);opacity:0}}
 .tap-hint{text-align:center;font-size:13px;color:var(--ink-soft);margin:14px 0 0}
 .letter{display:none;background:var(--card);border:1px solid var(--card-line);border-radius:28px;padding:30px 24px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 20px 40px rgba(110,70,190,.14)}
-.letter.show{display:block;animation:unfold .7s cubic-bezier(.2,.9,.3,1.2)}
+#h-gift,#gift-sub{text-align:center}
+.letter.show{margin-top:22px;display:block;animation:unfold .7s cubic-bezier(.2,.9,.3,1.2)}
 @keyframes unfold{from{transform:scale(.6) translateY(30px);opacity:0}to{transform:none;opacity:1}}
 .letter p{margin:0 0 14px;font-size:15.5px;line-height:1.85}
 .letter .sign{margin:22px 0 0;text-align:right;font-weight:800}
@@ -401,7 +402,7 @@ $('giftBtn').onclick=function(){
   setTimeout(()=>{
     const r=b.getBoundingClientRect();if(!reduce)burst(r.left+r.width/2,r.top+r.height/2,110);
     b.classList.remove('shake');b.classList.add('gone');
-    setTimeout(()=>{b.style.display='none';$('tapHint').style.display='none';$('gift-sub').textContent='매니저님께 보내는 초대의 글입니다.';$('letter').classList.add('show');if(CONFIG.secretDress)$('dcBg').classList.add('show')},reduce?0:420);
+    setTimeout(()=>{b.style.display='none';$('tapHint').style.display='none';$('gift-sub').style.display='none';$('letter').classList.add('show');if(CONFIG.secretDress)$('dcBg').classList.add('show')},reduce?0:420);
   },reduce?0:600);
 };
 </script>
