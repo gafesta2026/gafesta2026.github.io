@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ctext y=%22.9em%22 font-size=%2290%22%3E%F0%9F%91%91%3C/text%3E%3C/svg%3E">
-<meta property="og:title" content="GA 2026 Manager Festa 초대장">
+<meta property="og:title" content="GA Manager Festa 2026 초대장">
 <meta property="og:description" content="2026년 11월 6일(금) ~ 7일(토), 인스파이어 리조트">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://gafesta2026.github.io/og.jpg?v=4">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<title>GA 2026 Manager Festa 초대장</title>
+<title>GA Manager Festa 2026 초대장</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800;900&family=Gothic+A1:wght@400;600;800&display=swap" rel="stylesheet">
@@ -280,7 +280,7 @@ const CONFIG = {
   lead: "올 한 해 탁월한 성과로 현장을 빛내 주신<br>매니저님을 2026년의 주인공으로 모십니다.",
   letter: [
     "한 해 동안 영업현장에서 최고의 성과를 만들어주신 매니저님께 감사의 마음을 전합니다.",
-    "그 노고를 함께 축하하고 성과를 나누는 1박 2일, <b>GA 2026 Manager Festa</b>에 매니저님을 초대합니다.",
+    "그 노고를 함께 축하하고 성과를 나누는 1박 2일, <b>GA Manager Festa 2026</b>에 매니저님을 초대합니다.",
     "11월 6일, 인스파이어 리조트에서 왕관의 주인공이 되어 마음껏 즐겨 주세요."
   ],
   program: [
@@ -318,7 +318,7 @@ $('info').innerHTML = [
 $('prog').innerHTML = CONFIG.program.map(g=>`<li class="day"><h3>${g.day}</h3></li>`+g.items.map(([t,e,a,b,k])=>`<li${k?' class="key"':''}><time>${t}${e?`<small>~${e}</small>`:''}</time><div><strong>${a}</strong>${b?`<span>${b}</span>`:''}</div></li>`).join('')).join('');
 $('place').innerHTML = CONFIG.venue;
 $('addr').innerHTML = CONFIG.address + badge('address');
-$('foot').innerHTML = `주최 ${CONFIG.host}<br>GA 2026 Manager Festa`;
+$('foot').innerHTML = `주최 ${CONFIG.host}<br>GA Manager Festa 2026`;
 const q = encodeURIComponent(CONFIG.mapQuery);
 $('naver').href = 'https://map.naver.com/p/search/' + q;
 $('kakao').href = 'https://map.kakao.com/?q=' + q;
